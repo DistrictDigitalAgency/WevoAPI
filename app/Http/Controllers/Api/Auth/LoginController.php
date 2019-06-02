@@ -20,7 +20,7 @@ class LoginController extends Controller
   public function __construct()
   {
 
-    $this->client = Client::find(1);
+    $this->client = Client::findOrFail(1);
   }
 
 

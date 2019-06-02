@@ -11,14 +11,14 @@ class RegisterController extends Controller
 {
 
 
-  //use IssueTokenTrait ;
+  use IssueTokenTrait ;
   private $client;
 
 
   public function __construct()
   {
 
-    $this->client = Client::find(1);
+    $this->client = Client::findOrFail(1);
   }
 
 
@@ -27,7 +27,7 @@ class RegisterController extends Controller
   	$this->validate($request, [
 	'name' => 'required', 
 	'email' => 'required|email|unique:users,email',
-	'password' => 'required',
+	'password' => 'required|min:8',
   'c_password'=>'required|same:password',
   'phone' => 'required|digits:8|unique:users',
   'date_of_birth' => 'required',
@@ -49,9 +49,9 @@ class RegisterController extends Controller
 
   	]);
 	
-    //return $this->issueToken($request, 'password');
+    return $this->issueToken($request, 'password');
     {
-          $params = [
+         /* $params = [
         'grant_type' => 'password',
         'client_id' => $this->client->id,
         'client_secret' => $this->client->secret,   
@@ -65,7 +65,7 @@ class RegisterController extends Controller
 
       $proxy = Request::create('oauth/token', 'POST');
 
-      return Route::dispatch($proxy);
+      return Route::dispatch($proxy);*/
     }
   }
 

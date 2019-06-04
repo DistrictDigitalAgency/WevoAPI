@@ -22,7 +22,7 @@ class CreateQuestionsTable extends Migration
             $table->integer('votesContre')->default('0');
             $table->integer('votesAbs')->default('0');
             $table->integer('total')->default('0');
-            $table->boolean('status')->default('0');
+            $table->boolean('status')->default('1');
             $table->timestamps();
         });
     }

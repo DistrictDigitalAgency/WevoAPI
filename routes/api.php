@@ -21,5 +21,13 @@ Route::middleware('auth:api')->group(function () {
  Route::post('logout', 'Api\Auth\LoginController@logout'); 
  Route::post('postCreatePost', 'Api\PostController@postCreatePost'); 
 });
-Route::get("/getQuestionsByCategory","GetQController@getQuestions");
+Route::get("/getQuestionsByCategory","GetQController@getQuestionsByCat");
+Route::get("/getPoliticsQuestions","GetQController@getQuestionsPolitics");
+Route::get("/getSportQuestions","GetQController@getQuestionsSport");
+Route::get("/getFashionQuestions","GetQController@getQuestionsFashion");
+Route::get("/getActuQuestions","GetQController@getQuestionsActu");
+Route::get("/getMediaQuestions","GetQController@getQuestionsMedia");
+Route::get("/getCultureQuestions","GetQController@getQuestionsCulture");
+
+Route::get("/getQuestionsKahaw","GetQController@getQuestions");
 Route::get("/getLastResults","GetRController@getResults");

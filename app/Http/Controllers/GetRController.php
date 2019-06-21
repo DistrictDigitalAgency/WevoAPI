@@ -15,7 +15,7 @@ class GetRController extends Controller
     $results=DB::select(
            'SELECT questions.id,questions.questions,questions.votesPour,questions.votesContre,questions.votesAbs,questions.total
             FROM questions
-            WHERE (questions.status=1)
+            WHERE (questions.status=0)
             
           
             ORDER BY questions.id DESC

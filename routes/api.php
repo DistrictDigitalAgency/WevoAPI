@@ -31,3 +31,4 @@ Route::get("/getCultureQuestions","GetQController@getQuestionsCulture");
 
 Route::get("/getQuestionsKahaw","GetQController@getQuestions");
 Route::get("/getLastResults","GetRController@getResults");
+Route::post("/insertVote","PostVoteController@insertVotes");
